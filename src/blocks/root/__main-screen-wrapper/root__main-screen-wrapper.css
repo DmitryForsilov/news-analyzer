@@ -1,0 +1,6 @@
+.root__main-screen-wrapper {
+  background-image: url('../../../images/header-cover.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

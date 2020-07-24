@@ -1,0 +1,45 @@
+@import url('./__img-wrapper/card__img-wrapper.css');
+@import url('./__text-content/card__text-content.css');
+@import url('./__date/card__date.css');
+@import url('./__title/card__title.css');
+@import url('./__text/card__text.css');
+@import url('./__site/card__site.css');
+
+.card {
+  height: 576px;
+  border-radius: 16px;
+  overflow: hidden;
+  color: #1A1B22;
+  cursor: url('../../images/icon-cursor.svg'), auto;
+  transition: .3s ease;
+}
+
+.card:hover {
+  box-shadow:
+    0 4px 6px -7px rgba(0, 0, 0, .3),
+    0 4px 30px -9px rgba(0, 0, 0, .3);
+}
+
+@media (max-width: 1280px) {
+  .card {
+    height: 520px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .card {
+    height: 468px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    height: 420px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    height: 446px;
+  }
+}

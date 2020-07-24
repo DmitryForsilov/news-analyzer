@@ -1,0 +1,20 @@
+@import url('./__image/author__image.css');
+@import url('./__text-container/author__text-container.css');
+@import url('./__title/author__title.css');
+@import url('./__text/author__text.css');
+
+.author {
+  display: flex;
+}
+
+@media (max-width: 1024px) {
+  .author {
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .author {
+    flex-direction: column;
+  }
+}

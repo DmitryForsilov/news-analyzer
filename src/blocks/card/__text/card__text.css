@@ -1,0 +1,7 @@
+.card__text {
+  max-height: calc(22px * 4); /* line-height * max lines */
+  font-size: 16px;
+  line-height: 22px;
+  margin: 0 0 auto;
+  overflow: hidden;
+}

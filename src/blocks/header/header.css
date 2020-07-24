@@ -1,0 +1,31 @@
+@import url('./__logo/header__logo.css');
+@import url('./__nav/header__nav.css');
+@import url('./__nav-list/header__nav-list.css');
+@import url('./__nav-link/header__nav-link.css');
+@import url('./__nav-item/header__nav-item.css');
+
+.header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    height: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 64px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    height: 56px;
+  }
+}

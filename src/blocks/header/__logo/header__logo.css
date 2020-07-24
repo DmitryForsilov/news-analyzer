@@ -1,0 +1,17 @@
+.header__logo {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 22px;
+  margin: 0;
+  border: none;
+}
+
+.header__logo:hover {
+  color: rgb(219, 219, 219);
+}
+
+@media (max-width: 576px) {
+  .header__logo {
+    font-size: 16px;
+  }
+}

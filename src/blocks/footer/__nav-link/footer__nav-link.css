@@ -1,0 +1,10 @@
+.footer__nav-link {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: normal;
+  color: #1A1B22;
+}
+
+.footer__nav-link:hover {
+  color: gray;
+}

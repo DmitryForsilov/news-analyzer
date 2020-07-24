@@ -1,0 +1,9 @@
+.link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: .3s ease;
+  cursor: url('../../images/icon-cursor.svg'), auto;
+}

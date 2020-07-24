@@ -1,0 +1,30 @@
+.cards__link {
+  display: block;
+  position: relative;
+  padding-right: 26px;
+}
+
+.cards__link::after {
+  content: '';
+  width: 8px;
+  height: 12px;
+  display: block;
+  background-image: url('../../../images/icon-arrow-right.svg');
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  transition: .3s ease;
+}
+
+.cards__link:hover.cards__link::after {
+  transform: scale(1.5);
+}
+
+@media (max-width: 576px) {
+  .cards__link {
+    width: 220px;
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,25 @@
+.feedback__sad-loupe {
+  width: 96px;
+  height: 96px;
+  background-image: url('../../../images/icon-not-found_v1.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 26px;
+}
+
+@media (max-width: 768px) {
+  .feedback__sad-loupe {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .feedback__sad-loupe {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 16px;
+  }
+}
