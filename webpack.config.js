@@ -29,9 +29,16 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [
-          {
-            loader: isDevelopmentEnvironment ? 'style-loader' : MiniCssExtractPlugin.loader,
-          },
+          isDevelopmentEnvironment
+          ? {
+            loader: 'style-loader',
+            }
+          : {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                publicPath: '../../',
+              },
+            },
           {
             loader: 'css-loader',
             options: {
