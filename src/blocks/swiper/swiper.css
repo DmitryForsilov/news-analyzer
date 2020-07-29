@@ -1,0 +1,56 @@
+@import url('./__slide/swiper__slide.css');
+@import url('./__wrapper/swiper__wrapper.css');
+@import url('./__pagination/swiper__pagination.css');
+@import url('./__pagination-bullet/swiper__pagination-bullet.css');
+@import url('./__button/swiper__button.css');
+
+.swiper {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  box-sizing: border-box;
+  padding: 20px 0 70px;
+  z-index: 1;
+}
+
+.swiper::before, .swiper::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 288px;
+  position: absolute;
+  top: 20px;
+  z-index: 2;
+}
+
+.swiper::before {
+  background: linear-gradient(90deg, #F5F6F7 0%, transparent 100%);
+  left: 0;
+}
+
+.swiper::after {
+  background: linear-gradient(90deg, transparent 0%, #F5F6F7 100%);
+  right: 0;
+}
+
+@media (max-width: 1024px) {
+  .swiper::before, .swiper::after {
+    display: none;
+    padding: 20px 0 64px;
+  }
+}
+
+@media (max-width: 768px) {
+  .swiper {
+    padding: 20px 0 54px 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .swiper {
+    padding: 20px 0 38px 16px;
+  }
+}

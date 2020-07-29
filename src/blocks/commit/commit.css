@@ -1,0 +1,19 @@
+@import url('./__avatar/commit__avatar.css');
+@import url('./__date/commit__date.css');
+@import url('./__description/commit__description.css');
+@import url('./__email/commit__email.css');
+@import url('./__name/commit__name.css');
+@import url('./__title-container/commit__title-container.css');
+@import url('./__wrapper-link/commit__wrapper-link.css');
+
+.commit {
+  width: auto;
+  border-radius: 16px;
+  transition: .3s ease;
+}
+
+.commit:hover {
+  box-shadow:
+    0 4px 6px -7px rgba(0,0,0,.1),
+    0 4px 30px -9px rgba(0,0,0,.2);
+}

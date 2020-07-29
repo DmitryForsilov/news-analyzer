@@ -1,6 +1,16 @@
 @import url('../../vendor/normalize.css');
 @import url('../../vendor/fonts.css');
-
-body {
-  background-color: khaki;
-}
+@import url('../../blocks/root/root.css');
+@import url('../../blocks/main-container/main-container.css');
+@import url('../../blocks/link/link.css');
+@import url('../../blocks/title/title.css');
+@import url('../../blocks/text/text.css');
+@import url('../../blocks/button/button.css');
+@import url('../../blocks/swiper/swiper.css');
+@import url('../../blocks/commit/commit.css');
+@import url('../../blocks/header/header.css');
+@import url('../../blocks/description/description.css');
+@import url('../../blocks/techs/techs.css');
+@import url('../../blocks/author/author.css');
+@import url('../../blocks/commits/commits.css');
+@import url('../../blocks/footer/footer.css');

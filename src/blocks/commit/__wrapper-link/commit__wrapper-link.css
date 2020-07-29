@@ -1,0 +1,39 @@
+.commit__wrapper-link {
+  display: block;
+  width: 400px;
+  height: 288px;
+  background-color: #fff;
+  border-radius: 16px;
+  color: #1A1B22;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1280px) {
+  .commit__wrapper-link {
+    width: 380px;
+    height: 274px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .commit__wrapper-link {
+    width: 358px;
+    height: 258px;
+  }
+}
+
+@media (max-width: 768px) {
+  .commit__wrapper-link {
+    width: 336px;
+    height: 242px;
+  }
+}
+
+@media (max-width: 576px) {
+  .commit__wrapper-link {
+    width: 288px;
+    height: 264px;
+    padding: 16px;
+  }
+}

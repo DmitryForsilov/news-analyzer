@@ -1,9 +1,11 @@
 .header__logo {
+  font-family: 'Roboto Slab', 'Georgia', serif;
   font-weight: bold;
   font-size: 20px;
   line-height: 22px;
   margin: 0;
   border: none;
+  color: var(--text-color);
 }
 
 .header__logo:hover {

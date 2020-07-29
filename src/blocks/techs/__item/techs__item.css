@@ -1,0 +1,13 @@
+.techs__item {
+  margin-right: 70px;
+}
+
+.techs__item:last-of-type {
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  .techs__item {
+    margin: 0;
+  }
+}

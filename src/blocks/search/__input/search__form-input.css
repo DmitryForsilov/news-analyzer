@@ -12,6 +12,10 @@
   color: #1A1B22;
 }
 
+.search__form-input:focus {
+  border: 2px solid #2f71e5;
+}
+
 .search__form-input::placeholder {
   font-size: 16px;
   line-height: 22px;

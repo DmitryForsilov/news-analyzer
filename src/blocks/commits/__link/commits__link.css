@@ -1,0 +1,29 @@
+.commits__link {
+  display: block;
+  position: relative;
+  padding-right: 26px;
+}
+
+.commits__link::after {
+  content: '';
+  width: 8px;
+  height: 12px;
+  display: block;
+  background-image: url('../../../images/icon-arrow-right.svg');
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  transition: .3s ease;
+}
+
+.commits__link:hover.commits__link::after {
+  transform: scale(1.5);
+}
+
+@media (max-width: 576px) {
+  .commits__link {
+    display: none;
+  }
+}

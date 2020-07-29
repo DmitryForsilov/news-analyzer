@@ -1,0 +1,9 @@
+.description__title {
+  margin: 0 0 24px;
+}
+
+@media (max-width: 768px) {
+  .description__title {
+    margin: 0 0 16px;
+  }
+}

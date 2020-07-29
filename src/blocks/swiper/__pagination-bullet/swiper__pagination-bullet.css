@@ -1,0 +1,14 @@
+@import url('./_active/swiper__pagination-bullet_active.css');
+
+.swiper__pagination-bullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 100%;
+  background: #D1D2D6;
+  margin-right: 8px;
+}
+
+.swiper__pagination-bullet:last-of-type {
+  margin-right: 0;
+}

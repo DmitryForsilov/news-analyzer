@@ -1,5 +1,7 @@
+@import url('./_active/header__nav-link_active.css');
+
 .header__nav-link:hover {
-  color: #fff;
+  color: var(--text-color);
 }
 
 @media (max-width: 576px) {

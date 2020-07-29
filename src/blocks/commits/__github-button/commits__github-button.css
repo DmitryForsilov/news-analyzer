@@ -1,0 +1,20 @@
+.commits__github-button {
+  display: none;
+  width: calc(100% - 32px);
+  height: 56px;
+  background: #F5F6F7;
+  border: 1px solid #1A1B22;
+  box-sizing: border-box;
+  border-radius: 80px;
+  margin-top: 10px;
+  text-decoration: none;
+  text-align: center;
+  color: #1A1B22;
+  line-height: 52px;
+}
+
+@media (max-width: 576px) {
+  .commits__github-button {
+    display: block;
+  }
+}

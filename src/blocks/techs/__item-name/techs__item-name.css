@@ -1,0 +1,9 @@
+.techs__item-name {
+  text-align: center;
+  margin: 0 0 26px;
+}
+
+.techs__item-name[id="webpack-title"] {
+  text-align: center;
+  margin: 0 0 22px;
+}

@@ -1,0 +1,9 @@
+@import url('./__content/techs__content.css');
+@import url('./__item-name/techs__item-name.css');
+@import url('./__item/techs__item.css');
+@import url('./__list/techs__list.css');
+@import url('./__title/techs__title.css');
+
+.techs {
+  background-color: #F5F6F7;
+}

@@ -1,0 +1,7 @@
+.description__text {
+  margin: 0 0 24px;
+}
+
+.description__text:last-of-type {
+  margin: 0;
+}

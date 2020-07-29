@@ -1,0 +1,19 @@
+.commit__name {
+  font-family: 'Roboto Slab', 'Georgia', serif;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .commit__name {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .commit__name {
+    font-size: 20px;
+  }
+}
