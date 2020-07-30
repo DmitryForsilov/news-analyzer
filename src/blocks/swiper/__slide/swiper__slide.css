@@ -1,7 +1,0 @@
-.swiper__slide {
-  flex-shrink: 0;
-  width: auto;
-  height: 100%;
-  position: relative;
-  transition-property: transform;
-}

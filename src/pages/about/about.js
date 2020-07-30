@@ -1,12 +1,10 @@
-import './about.css';
 import 'swiper/swiper-bundle.css';
+import './about.css';
 import Swiper, { Navigation, Pagination } from 'swiper';
 
 Swiper.use([Navigation, Pagination]);
 
-const mySwiper = new Swiper('.swiper', {
-  wrapperClass: 'swiper__wrapper',
-  slideClass: 'swiper__slide',
+const mySwiper = new Swiper('.swiper-container', {
   slidesPerView: 'auto',
   roundLengths: true,
   spaceBetween: 8,
@@ -14,15 +12,12 @@ const mySwiper = new Swiper('.swiper', {
   centeredSlides: false,
 
   pagination: {
-    el: '.swiper__pagination',
-    bulletClass: 'swiper__pagination-bullet',
-    bulletActiveClass: 'swiper__pagination-bullet_active',
+    el: '.swiper-pagination',
   },
 
   navigation: {
-    nextEl: '.swiper__button_type_next',
-    prevEl: '.swiper__button_type_prev',
-    disabledClass: 'swiper__button_disabled',
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
 
   breakpoints: {

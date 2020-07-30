@@ -1,9 +1,0 @@
-.swiper__button.swiper__button_disabled {
-  opacity: 0.35;
-  cursor: auto;
-  pointer-events: none;
-}
-
-.swiper__button.swiper__button_disabled:hover {
-  transform: none;
-}
