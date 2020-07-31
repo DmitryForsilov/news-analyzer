@@ -8,5 +8,6 @@
 @import url('./__nav-item/header__nav-item.css');
 
 .header {
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
   box-shadow: var(--bottom-line);
 }

@@ -6,6 +6,7 @@
 @import url('./__show-more-button/cards__show-more-button.css');
 
 .cards {
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
   width: 100%;
   display: flex;
   flex-direction: column;

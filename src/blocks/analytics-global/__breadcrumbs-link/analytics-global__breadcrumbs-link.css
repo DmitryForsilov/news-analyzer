@@ -1,0 +1,15 @@
+@import url('./_active/analytics-global__breadcrumbs-link_active.css');
+
+.analytics-global__breadcrumbs-link {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  text-decoration: none;
+  transition: .3s ease;
+  cursor: url('../../../images/icon-cursor.svg'), auto;
+  color: #B6BCBF;
+}
+
+.analytics-global__breadcrumbs-link:hover {
+  color: #1A1B22;
+}

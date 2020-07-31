@@ -1,0 +1,25 @@
+.analytics-global__breadcrumbs {
+  padding: 0;
+  list-style: none;
+  margin: 0 0 80px;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .analytics-global__breadcrumbs {
+    margin: 0 0 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  .analytics-global__breadcrumbs {
+    margin: 0 0 64px;
+  }
+}
+
+@media (max-width: 576px) {
+  .analytics-global__breadcrumbs {
+    display: none;
+  }
+}

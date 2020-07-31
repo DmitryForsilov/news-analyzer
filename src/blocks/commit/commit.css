@@ -7,6 +7,7 @@
 @import url('./__wrapper-link/commit__wrapper-link.css');
 
 .commit {
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
   width: auto;
   border-radius: 16px;
   transition: .3s ease;

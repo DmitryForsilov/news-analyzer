@@ -1,8 +1,10 @@
 @import url('./_place/main-container_place_header.css');
 @import url('./_place/main-container_place_footer.css');
 @import url('./_place/main-container_place_commits.css');
+@import url('./_place/main-container_place_analytics-global.css');
 
 .main-container {
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
   max-width: 1440px;
   box-sizing: border-box;
   padding: 80px 104px;

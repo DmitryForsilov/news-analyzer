@@ -28,6 +28,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
+        sideEffects: true,
         use: [
           isDevelopmentEnvironment
           ? {

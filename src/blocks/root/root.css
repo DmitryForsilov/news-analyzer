@@ -1,6 +1,6 @@
 @import url('./__main-screen-wrapper/root__main-screen-wrapper.css');
 
 .root {
-  font-family: 'Roboto', 'Arial',sans-serif;
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
   margin: auto;
 }

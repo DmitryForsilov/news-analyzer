@@ -4,6 +4,7 @@
 @import url('./__text/author__text.css');
 
 .author {
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
   display: flex;
 }
 

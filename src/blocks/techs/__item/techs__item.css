@@ -2,6 +2,34 @@
   margin-right: 70px;
 }
 
+.techs__item svg #html,
+.techs__item svg #css,
+.techs__item svg #javascript-background,
+.techs__item svg #javascript-chars,
+.techs__item svg #webpack {
+  transition: .3s ease;
+}
+
+.techs__item svg:hover #html {
+  fill: #E34f26;
+}
+
+.techs__item svg:hover #css {
+  fill: #2965F1;
+}
+
+.techs__item svg:hover #javascript-background {
+  fill: #F0DB4F;
+}
+
+.techs__item svg:hover #javascript-chars {
+  fill: #323330;
+}
+
+.techs__item svg:hover #webpack {
+  fill: #1d78c1;
+}
+
 .techs__item:last-of-type {
   margin-right: 0;
 }

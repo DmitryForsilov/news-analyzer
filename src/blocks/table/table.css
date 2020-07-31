@@ -1,0 +1,20 @@
+@import url('./__border-item/table__border-item.css');
+@import url('./__chart/table__chart.css');
+@import url('./__count-mark/table__count-mark.css');
+@import url('./__count-marks/table__count-marks.css');
+@import url('./__date/table__date.css');
+@import url('./__day/table__day.css');
+@import url('./__mentions/table__mentions.css');
+
+.table {
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+  display: grid;
+  gap: 0 46px;
+  grid-template-columns: 60px 1fr;
+}
+
+@media (max-width: 576px) {
+  .table {
+    gap: 0 20px;
+  }
+}

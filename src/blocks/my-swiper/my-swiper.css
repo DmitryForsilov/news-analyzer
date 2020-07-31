@@ -1,5 +1,6 @@
 /* --- swiper-container --- */
 .swiper-container {
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
   width: 100%;
   padding: 20px 0 70px;
   box-sizing: border-box;
@@ -28,7 +29,10 @@
 @media (max-width: 1024px) {
   .swiper-container::before, .swiper-container::after {
     display: none;
-    padding: 20px 0 64px;
+  }
+
+  .swiper-container {
+    padding: 20px 0 60px 64px;
   }
 }
 

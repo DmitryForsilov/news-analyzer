@@ -1,0 +1,56 @@
+.table__chart {
+  height: 24px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding-left: 6px;
+  box-sizing: border-box;
+  color: #fff;
+  background-color: #2F71E5;
+  margin-bottom: 56px;
+}
+
+.table__chart:last-of-type {
+  margin-bottom: 18px;
+}
+
+@media (max-width: 576px) {
+  .table__chart {
+    margin-bottom: 24px;
+  }
+
+  .table__chart:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+/* в дальнейшем ширина будет подставляться через JS */
+.table__chart_day_monday {
+  width: 25%;
+}
+
+.table__chart_day_tuesday {
+  width: 50%;
+}
+
+.table__chart_day_wednesday {
+  width: 75%;
+}
+
+.table__chart_day_thursday {
+  width: 100%;
+}
+
+.table__chart_day_friday {
+  width: 11%;
+}
+
+.table__chart_day_saturday {
+  width: 66%;
+}
+
+.table__chart_day_sunday {
+  width: 34%;
+}

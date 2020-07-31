@@ -1,3 +1,4 @@
+import 'swiper/swiper-bundle.css';
 import './about.css';
 import Swiper, { Navigation, Pagination } from 'swiper';
 
