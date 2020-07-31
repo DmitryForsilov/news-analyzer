@@ -26,6 +26,12 @@
   }
 }
 
+@media (max-width: 320px) {
+  .table__chart {
+    padding-left: 4px;
+  }
+}
+
 /* в дальнейшем ширина будет подставляться через JS */
 .table__chart_day_monday {
   width: 25%;

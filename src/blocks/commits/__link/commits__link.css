@@ -13,6 +13,10 @@
   padding-right: 26px;
 }
 
+.commits__link:hover {
+  color: gray;
+}
+
 .commits__link::after {
   content: '';
   width: 8px;
