@@ -1,0 +1,8 @@
+@import url('./__content/feedback__content.css');
+@import url('./__sad-loupe/feedback__sad-loupe.css');
+@import url('./__title/feedback__title.css');
+@import url('./__text/feedback__text.css');
+
+.feedback {
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+}

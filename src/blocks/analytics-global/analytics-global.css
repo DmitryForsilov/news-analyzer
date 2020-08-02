@@ -1,0 +1,12 @@
+@import url('./__breadcrumbs-item/analytics-global__breadcrumbs-item.css');
+@import url('./__breadcrumbs-link/analytics-global__breadcrumbs-link.css');
+@import url('./__breadcrumbs/analytics-global__breadcrumbs.css');
+@import url('./__count/analytics-global__count.css');
+@import url('./__list/analytics-global__list.css');
+@import url('./__text/analytics-global__text.css');
+@import url('./__title/analytics-global__title.css');
+@import url('./__list-text-container/analytics-global__list-text-container.css');
+
+.analytics-global {
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+}

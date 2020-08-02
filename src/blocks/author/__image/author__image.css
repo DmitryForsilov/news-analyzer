@@ -1,0 +1,40 @@
+.author__image {
+  width: 464px;
+  height: 464px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin-right: 56px;
+}
+
+@media (max-width: 1280px) {
+  .author__image {
+    width: 388px;
+    height: 388px;
+    margin-right: 48px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .author__image {
+    width: 310px;
+    height: 310px;
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .author__image {
+    width: 232px;
+    height: 232px;
+    margin-right: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .author__image {
+    width: 272px;
+    height: 272px;
+    margin: 0 0 24px;
+  }
+}

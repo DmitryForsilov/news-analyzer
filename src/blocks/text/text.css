@@ -1,0 +1,9 @@
+@import url('./_color/text_color_white.css');
+
+.text {
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1A1B22;
+}

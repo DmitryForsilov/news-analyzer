@@ -1,0 +1,19 @@
+@import url('./_active/header__nav-item_active.css');
+
+.header__nav-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #B6BCBF;
+  margin-right: 34px;
+}
+
+.header__nav-item:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 576px) {
+  .header__nav-item {
+    margin-right: 11px;
+  }
+}

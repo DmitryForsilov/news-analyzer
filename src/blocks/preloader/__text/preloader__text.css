@@ -1,0 +1,11 @@
+.preloader__text {
+  color: #B6BCBF;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .preloader__circle {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}

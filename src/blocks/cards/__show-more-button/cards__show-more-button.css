@@ -1,0 +1,44 @@
+.cards__show-more-button {
+  width: 288px;
+  height: 64px;
+  background-color: #FFF;
+  color: #1A1B22;
+  border-radius: 80px;
+  margin: 0 auto;
+}
+
+.cards__show-more-button:hover {
+  background-color: #E8E8E8;
+}
+
+.cards__show-more-button:active {
+  background-color: #dadada;
+}
+
+@media (max-width: 1280px) {
+  .cards__show-more-button {
+    width: 272px;
+    height: 62px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cards__show-more-button {
+    width: 256px;
+    height: 58px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards__show-more-button {
+    width: 240px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 576px) {
+  .cards__show-more-button {
+    width: 100%;
+    height: 56px;
+  }
+}

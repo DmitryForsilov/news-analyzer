@@ -1,0 +1,7 @@
+@import url('./__content/preloader__content.css');
+@import url('./__circle/preloader__circle.css');
+@import url('./__text/preloader__text.css');
+
+.preloader {
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+}

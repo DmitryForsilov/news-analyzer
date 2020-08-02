@@ -1,0 +1,16 @@
+.table__count-marks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 26px;
+  grid-column: 2 / 3;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 576px) {
+  .table__count-marks {
+    display: none;
+  }
+}

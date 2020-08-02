@@ -1,0 +1,30 @@
+@import url('./_place/main-container_place_header.css');
+@import url('./_place/main-container_place_footer.css');
+@import url('./_place/main-container_place_commits.css');
+@import url('./_place/main-container_place_analytics-global.css');
+
+.main-container {
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+  max-width: 1440px;
+  box-sizing: border-box;
+  padding: 80px 104px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .main-container {
+    padding: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-container {
+    padding: 32px 16px;
+  }
+}

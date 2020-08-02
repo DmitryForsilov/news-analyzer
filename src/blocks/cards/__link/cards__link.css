@@ -1,0 +1,43 @@
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.6);
+  }
+}
+
+.cards__link {
+  display: block;
+  position: relative;
+  padding-right: 26px;
+}
+
+.cards__link:hover {
+  color: gray;
+}
+
+.cards__link::after {
+  content: '';
+  width: 8px;
+  height: 12px;
+  display: block;
+  background-image: url('../../../images/icon-arrow-right.svg');
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  transition: .3s ease;
+}
+
+.cards__link:hover.cards__link::after {
+  animation: pulse 1s ease-in-out infinite alternate;
+}
+
+@media (max-width: 576px) {
+  .cards__link {
+    width: 220px;
+    padding-right: 0;
+  }
+}

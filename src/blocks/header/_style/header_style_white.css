@@ -1,0 +1,4 @@
+.header_style_white {
+  --bottom-line: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+  --text-color: #fff;
+}

@@ -1,0 +1,11 @@
+.analytics-global__title {
+  font-weight: normal;
+  color: #1A1B22;
+  margin: 0 0 24px;
+}
+
+@media (max-width: 576px) {
+  .analytics-global__title {
+    margin: 0 0 16px;
+  }
+}

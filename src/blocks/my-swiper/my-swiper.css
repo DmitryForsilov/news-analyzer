@@ -1,0 +1,100 @@
+/* --- swiper-container --- */
+.swiper-container {
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+  width: 100%;
+  padding: 20px 0 70px;
+  box-sizing: border-box;
+}
+
+.swiper-container::before, .swiper-container::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 288px;
+  position: absolute;
+  top: 20px;
+  z-index: 2;
+}
+
+.swiper-container::before {
+  background: linear-gradient(90deg, #F5F6F7 0%, transparent 100%);
+  left: 0;
+}
+
+.swiper-container::after {
+  background: linear-gradient(90deg, transparent 0%, #F5F6F7 100%);
+  right: 0;
+}
+
+@media (max-width: 1024px) {
+  .swiper-container::before, .swiper-container::after {
+    display: none;
+  }
+
+  .swiper-container {
+    padding: 20px 0 60px 64px;
+  }
+}
+
+@media (max-width: 768px) {
+  .swiper-container {
+    padding: 20px 0 54px 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .swiper-container {
+    padding: 20px 0 38px 16px;
+  }
+}
+
+/* --- swiper-pagination-bullet --- */
+.swiper-pagination-bullet {
+  background-color: #D1D2D6;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #1A1B22;
+}
+
+/* --- swiper-button --- */
+.swiper-button-next, .swiper-button-prev {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0px 3px 10px rgba(14, 26, 57, 0.2);
+  z-index: 1;
+  transition: .3s ease;
+  cursor: url('../../images/icon-cursor.svg'), auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 164px;
+  z-index: 3;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  transform: scale(1.2);
+}
+
+.swiper-button-prev {
+  background-image: url('../../images/icon-slider-button-left.svg');
+  left: 24px;
+}
+
+.swiper-button-next {
+  background-image: url('../../images/icon-slider-button-right.svg');
+  right: 24px;
+}
+
+@media (max-width: 1024px) {
+  .swiper-button-next, .swiper-button-prev {
+    display: none;
+  }
+}

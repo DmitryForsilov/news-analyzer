@@ -1,0 +1,9 @@
+.techs__content {
+  display: flex;
+}
+
+@media (max-width: 1024px) {
+  .techs__content {
+    flex-direction: column;
+  }
+}

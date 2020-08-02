@@ -1,0 +1,31 @@
+.commits__title-container {
+  width: 100%;
+  max-width: 1440px;
+  box-sizing: border-box;
+  padding: 0 104px;
+  margin-bottom: 42px;
+  display: flex;
+  justify-content: space-between;
+  color: #1A1B22;
+}
+
+@media (max-width: 1024px) {
+  .commits__title-container {
+    padding: 0 60px;
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .commits__title-container {
+    padding: 0 40px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .commits__title-container {
+    padding: 0 16px;
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,15 @@
+.cards__title {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .cards__title {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .cards__title {
+    margin: 0 0 16px;
+  }
+}

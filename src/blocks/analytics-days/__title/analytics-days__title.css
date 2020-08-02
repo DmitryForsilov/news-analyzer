@@ -1,0 +1,15 @@
+.analytics-days__title {
+  font-family: 'Roboto Slab', 'Georgia', serif;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  color: #1A1B22;
+  margin: 0 0 48px;
+}
+
+@media (max-width: 576px) {
+  .analytics-days__title {
+    font-size: 22px;
+    margin: 0 0 16px;
+  }
+}
