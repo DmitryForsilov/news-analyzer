@@ -13,7 +13,7 @@
 }
 
 .search__form-input:focus {
-  border: 2px solid #2f71e5;
+  border: 1px solid #2f71e5;
 }
 
 .search__form-input::placeholder {
@@ -36,6 +36,6 @@
 
 @media (max-width: 576px) {
   .search__form-input {
-    margin-bottom: 16px;
+    margin-bottom: 2px;
   }
 }

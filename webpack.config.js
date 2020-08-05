@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const cssnano = require('cssnano');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -31,10 +32,10 @@ module.exports = {
         sideEffects: true,
         use: [
           isDevelopmentEnvironment
-          ? {
-            loader: 'style-loader',
+            ? {
+              loader: 'style-loader',
             }
-          : {
+            : {
               loader: MiniCssExtractPlugin.loader,
               options: {
                 publicPath: '../../',
@@ -78,6 +79,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+    }),
     new MiniCssExtractPlugin({
       filename: 'bundles/[name]/[name].[contenthash].css',
     }),
