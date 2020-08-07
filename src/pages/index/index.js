@@ -36,11 +36,11 @@ const makeSubmitFormCallback = (newsApi, dataStorage, results) => (query, callba
   results.renderPreloader();
 
   newsApi.getNews(query, currentDate, dateSevenDaysBefore)
-    .then(({ articles }) => {
-      if (articles.length === 0) {
+    .then((data) => {
+      if (data.articles.length === 0) {
         results.renderFeedback(MESSAGES.nothingFound);
       } else {
-        dataStorage.setItem('news', articles);
+        dataStorage.setItem('news', data.articles);
         results.renderNewsContainer();
         results.addNewsCardsHandler();
       }
@@ -66,6 +66,8 @@ const searchForm = new SearchForm(
   MESSAGES,
 );
 
+/* --- Установка слушателей --- */
 searchForm.setEvenListeners();
 
+/* --- Инициализация --- */
 results.initRenderNews();

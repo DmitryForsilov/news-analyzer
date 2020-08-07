@@ -7,4 +7,9 @@
   text-transform: uppercase;
   color: #B6BCBF;
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow-y: hidden;
+  word-wrap: break-word;
 }

@@ -137,14 +137,12 @@ class Results {
   }
 
   initRenderNews() {
-    const newsToRenderCount = this._getRenderedNewsCount();
+    const renderedNews = this._getRenderedNewsCount();
 
-    if (newsToRenderCount) {
-      const newsData = this._getNews();
-
+    if (renderedNews) {
+      this._setRenderedNewsCount(null);
       this.renderNewsContainer();
-      this._renderNewsCardsCount(newsData, 0, newsToRenderCount);
-      this._toggleShowMoreButton(this._showMoreButton, newsData);
+      this.addNewsCardsHandler();
     }
   }
 }
