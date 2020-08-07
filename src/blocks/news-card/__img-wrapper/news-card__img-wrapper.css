@@ -1,0 +1,31 @@
+.news-card__img-wrapper {
+  height: 272px;
+  background-image: url('../../../images/default-news-image.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 1280px) {
+  .news-card__img-wrapper {
+    height: 230px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .news-card__img-wrapper {
+    height: 190px;
+  }
+}
+
+@media (max-width: 768px) {
+  .news-card__img-wrapper {
+    height: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .news-card__img-wrapper {
+    height: 196px;
+  }
+}

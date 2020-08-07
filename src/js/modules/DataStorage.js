@@ -12,6 +12,10 @@ class DataStorage {
 
     return JSON.parse(data);
   }
+
+  clearStorage() {
+    this._storage.clear();
+  }
 }
 
 export default DataStorage;

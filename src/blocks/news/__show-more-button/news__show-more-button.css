@@ -1,0 +1,50 @@
+@import url('./_hidden/news__show-more-button_hidden.css');
+
+.news__show-more-button {
+  width: 288px;
+  height: 64px;
+  background-color: #FFF;
+  color: #1A1B22;
+  border-radius: 80px;
+  margin: 64px auto 0;
+}
+
+.news__show-more-button:hover {
+  background-color: #E8E8E8;
+}
+
+.news__show-more-button:active {
+  background-color: #dadada;
+}
+
+@media (max-width: 1280px) {
+  .news__show-more-button {
+    width: 272px;
+    height: 62px;
+    margin: 52px auto 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .news__show-more-button {
+    width: 256px;
+    height: 58px;
+    margin: 50px auto 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .news__show-more-button {
+    width: 240px;
+    height: 56px;
+    margin: 32px auto 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .news__show-more-button {
+    width: 100%;
+    height: 56px;
+    margin: 12px auto 0;
+  }
+}

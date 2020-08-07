@@ -7,5 +7,6 @@ export default {
     apiKey: '26a8a91802054a24bd726b2f2c9765c6',
     language: 'ru',
     pageSize: 100,
+    sortBy: 'publishedAt',
   },
 };

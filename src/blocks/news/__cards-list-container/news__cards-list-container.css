@@ -1,0 +1,4 @@
+.news__cards-list-container {
+  display: flex;
+  flex-direction: column;
+}
