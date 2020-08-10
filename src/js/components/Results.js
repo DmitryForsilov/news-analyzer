@@ -1,4 +1,5 @@
-import normalizeUtcDate from '../utils/normalizeUtcDate.js';
+import formatUtcDateToDayMonthYear from '../utils/formatUtcDateToDayMonthYear.js';
+import loadBackgroundImageFallback from '../utils/loadBackgroundImageFallback.js';
 
 class Results {
   constructor(section, newsStorageCallbacks, CSS_CLASSES) {
@@ -27,7 +28,7 @@ class Results {
       <a href="${data.url}" class="news-card__wrapper-link link" target="_blank">
         <div class="news-card__img-wrapper"></div>
         <div class="news-card__text-content">
-          <p class="news-card__date">${normalizeUtcDate(data.publishedAt)}</p>
+          <p class="news-card__date">${formatUtcDateToDayMonthYear(data.publishedAt)}</p>
           <h3 class="news-card__title">${data.title}</h3>
           <p class="news-card__text">${data.description}</p>
           <p class="news-card__site">${data.source.name}</p>
@@ -39,10 +40,8 @@ class Results {
     newsCardElement.classList.add('news-card');
     newsCardElement.insertAdjacentHTML('afterbegin', newsCardContentMarkup);
 
-    if (data.urlToImage) {
-      const newsCardImageWrapper = newsCardElement.querySelector(`.${this._CSS_CLASSES.newsCardImageWrapper}`);
-      newsCardImageWrapper.style['background-image'] = `url(${data.urlToImage})`;
-    }
+    const newsCardImageWrapper = newsCardElement.querySelector(`.${this._CSS_CLASSES.newsCardImageWrapper}`);
+    loadBackgroundImageFallback(newsCardImageWrapper, data.urlToImage);
 
     return newsCardElement;
   }

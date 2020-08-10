@@ -6,7 +6,7 @@ export default (utcDate) => {
   });
 
   const regexp = /\s(\d{4})\s[а-яё]\./i;
-  const normalizedDate = date.replace(regexp, ', $1');
+  const formattedDate = date.replace(regexp, ', $1');
 
-  return normalizedDate;
+  return formattedDate;
 };

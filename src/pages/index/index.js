@@ -2,6 +2,7 @@ import './index.css';
 import CSS_CLASSES from '../../js/constants/CSS_CLASSES.js';
 import MESSAGES from '../../js/constants/MESSAGES.js';
 import NEWS_API_CONFIG from '../../js/constants/NEWS_API_CONFIG.js';
+import normalizeTimeStamp from '../../js/utils/normalizeTimeStamp.js';
 import convertTimeStampToUtcDate from '../../js/utils/convertTimeStampToUtcDate.js';
 import getTimeStampDaysBefore from '../../js/utils/getTimeStampDaysBefore.js';
 import DataStorage from '../../js/modules/DataStorage.js';
@@ -27,7 +28,7 @@ const makeNewsStorageCallbacks = (dataStorage) => {
 };
 
 const makeSubmitFormCallback = (newsApi, dataStorage, results) => (query, callbacks) => {
-  const timeStamp = Date.now();
+  const timeStamp = normalizeTimeStamp(Date.now());
   const currentDate = convertTimeStampToUtcDate(timeStamp);
   const dateSevenDaysBefore = convertTimeStampToUtcDate(getTimeStampDaysBefore(timeStamp));
 
@@ -36,11 +37,12 @@ const makeSubmitFormCallback = (newsApi, dataStorage, results) => (query, callba
   results.renderPreloader();
 
   newsApi.getNews(query, currentDate, dateSevenDaysBefore)
-    .then((data) => {
-      if (data.articles.length === 0) {
+    .then(({ articles }) => {
+      if (articles.length === 0) {
         results.renderFeedback(MESSAGES.nothingFound);
       } else {
-        dataStorage.setItem('news', data.articles);
+        dataStorage.setItem('query', query);
+        dataStorage.setItem('news', articles);
         results.renderNewsContainer();
         results.addNewsCardsHandler();
       }

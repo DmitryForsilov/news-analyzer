@@ -6,4 +6,6 @@ export default {
   newsCardImageWrapper: 'news-card__img-wrapper',
   showMoreButton: 'news__show-more-button',
   showMoreButtonHidden: 'news__show-more-button_hidden',
+  analyticsGlobal: 'analytics-global',
+  analyticsDays: 'analytics-days',
 };

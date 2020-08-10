@@ -31,32 +31,3 @@
     padding-left: 4px;
   }
 }
-
-/* в дальнейшем ширина будет подставляться через JS */
-.table__chart_day_monday {
-  width: 25%;
-}
-
-.table__chart_day_tuesday {
-  width: 50%;
-}
-
-.table__chart_day_wednesday {
-  width: 75%;
-}
-
-.table__chart_day_thursday {
-  width: 100%;
-}
-
-.table__chart_day_friday {
-  width: 11%;
-}
-
-.table__chart_day_saturday {
-  width: 66%;
-}
-
-.table__chart_day_sunday {
-  width: 34%;
-}
