@@ -9,7 +9,6 @@ class SearchForm {
 
     this.boundEnableFormElements = this._enableFormElements.bind(this);
     this.boundDisableFormElements = this._disableFormElements.bind(this);
-    this.boundResetForm = this._resetForm.bind(this);
   }
 
   _isFormValid() {
@@ -42,11 +41,6 @@ class SearchForm {
     });
   }
 
-  _resetForm() {
-    this._inputError.textContent = '';
-    this._form.reset();
-  }
-
   _submitHandler(event) {
     event.preventDefault();
     this._renderErrorElement(this._input, this._inputError);
@@ -65,9 +59,6 @@ class SearchForm {
         },
         disableFormElements: () => {
           this.boundDisableFormElements();
-        },
-        resetForm: () => {
-          this.boundResetForm();
         },
       },
     );

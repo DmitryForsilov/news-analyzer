@@ -1,5 +1,5 @@
 import './index.css';
-import CSS_CLASSES from '../../js/constants/CSS_CLASSES.js';
+import CSS_SELECTORS from '../../js/constants/CSS_SELECTORS.js';
 import MESSAGES from '../../js/constants/MESSAGES.js';
 import NEWS_API_CONFIG from '../../js/constants/NEWS_API_CONFIG.js';
 import normalizeTimeStamp from '../../js/utils/normalizeTimeStamp.js';
@@ -15,10 +15,16 @@ const { localStorage } = window;
 const { form } = document.forms;
 const { input } = form.elements;
 const { submitButton } = form.elements;
-const inputError = form.querySelector(`.${CSS_CLASSES.inputError}`);
-const resultsContainer = document.querySelector(`.${CSS_CLASSES.resultsContainer}`);
+const inputError = form.querySelector(CSS_SELECTORS.inputError);
+const resultsContainer = document.querySelector(CSS_SELECTORS.resultsContainer);
 
 /* --- Функции --- */
+const initInputQuery = (inputElement, query) => {
+  if (query) {
+    inputElement.defaultValue = query;
+  }
+};
+
 const makeNewsStorageCallbacks = (dataStorage) => {
   const getNews = () => dataStorage.getItem('news');
   const getRenderedNewsCount = () => dataStorage.getItem('renderedNews');
@@ -46,12 +52,10 @@ const makeSubmitFormCallback = (newsApi, dataStorage, results) => (query, callba
         results.renderNewsContainer();
         results.addNewsCardsHandler();
       }
-
-      callbacks.resetForm();
     })
     .catch((error) => {
       console.log(error);
-      results.renderFeedback(MESSAGES.error);
+      results.renderFeedback(MESSAGES.requestError);
     })
     .finally(() => callbacks.enableFormElements());
 };
@@ -59,7 +63,7 @@ const makeSubmitFormCallback = (newsApi, dataStorage, results) => (query, callba
 /* --- Экземпляры классов --- */
 const newsApi = new NewsApi(NEWS_API_CONFIG);
 const dataStorage = new DataStorage(localStorage);
-const results = new Results(resultsContainer, makeNewsStorageCallbacks(dataStorage), CSS_CLASSES);
+const results = new Results(resultsContainer, makeNewsStorageCallbacks(dataStorage));
 const searchForm = new SearchForm(
   {
     form, input, inputError, submitButton,
@@ -72,4 +76,5 @@ const searchForm = new SearchForm(
 searchForm.setEvenListeners();
 
 /* --- Инициализация --- */
+initInputQuery(input, dataStorage.getItem('query'));
 results.initRenderNews();

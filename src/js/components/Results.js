@@ -1,13 +1,13 @@
 import formatUtcDateToDayMonthYear from '../utils/formatUtcDateToDayMonthYear.js';
 import loadBackgroundImageFallback from '../utils/loadBackgroundImageFallback.js';
+import deleteTagsFromString from '../utils/deleteTagsFromString.js';
 
 class Results {
-  constructor(section, newsStorageCallbacks, CSS_CLASSES) {
+  constructor(section, newsStorageCallbacks) {
     this._section = section;
     this._getNews = newsStorageCallbacks.getNews;
     this._getRenderedNewsCount = newsStorageCallbacks.getRenderedNewsCount;
     this._setRenderedNewsCount = newsStorageCallbacks.setRenderedNewsCount;
-    this._CSS_CLASSES = CSS_CLASSES;
   }
 
   static _calculateNewsToRenderCount(newsData, renderedNewsCount, newsToAdd) {
@@ -19,18 +19,18 @@ class Results {
     return newsToRenderCount;
   }
 
-  _deleteSectionContent() {
-    this._section.innerHTML = '';
+  static _deleteSectionContent(section) {
+    section.innerHTML = '';
   }
 
-  _createNewsCard(data) {
+  static _createNewsCard(data) {
     const newsCardContentMarkup = `
       <a href="${data.url}" class="news-card__wrapper-link link" target="_blank">
         <div class="news-card__img-wrapper"></div>
         <div class="news-card__text-content">
           <p class="news-card__date">${formatUtcDateToDayMonthYear(data.publishedAt)}</p>
           <h3 class="news-card__title">${data.title}</h3>
-          <p class="news-card__text">${data.description}</p>
+          <p class="news-card__text">${deleteTagsFromString(data.description)}</p>
           <p class="news-card__site">${data.source.name}</p>
         </div>
       </a>
@@ -40,7 +40,7 @@ class Results {
     newsCardElement.classList.add('news-card');
     newsCardElement.insertAdjacentHTML('afterbegin', newsCardContentMarkup);
 
-    const newsCardImageWrapper = newsCardElement.querySelector(`.${this._CSS_CLASSES.newsCardImageWrapper}`);
+    const newsCardImageWrapper = newsCardElement.querySelector('.news-card__img-wrapper');
     loadBackgroundImageFallback(newsCardImageWrapper, data.urlToImage);
 
     return newsCardElement;
@@ -55,15 +55,15 @@ class Results {
 
   _toggleShowMoreButton(button, newsData) {
     if (this._areMoreNewsToRender(newsData)) {
-      button.classList.remove(`${this._CSS_CLASSES.showMoreButtonHidden}`);
+      button.classList.remove('news__show-more-button_hidden');
     } else {
-      button.classList.add(`${this._CSS_CLASSES.showMoreButtonHidden}`);
+      button.classList.add('news__show-more-button_hidden');
     }
   }
 
   _renderNewsCardsCount(newsData, renderedNewsCount, newsToRenderCount) {
     for (let i = renderedNewsCount; i < newsToRenderCount; i += 1) {
-      const card = this._createNewsCard(newsData[i]);
+      const card = this.constructor._createNewsCard(newsData[i]);
       this._newsCardsList.appendChild(card);
     }
   }
@@ -90,7 +90,7 @@ class Results {
       </div>
     `;
 
-    this._deleteSectionContent();
+    this.constructor._deleteSectionContent(this._section);
     this._section.insertAdjacentHTML('afterbegin', preloaderMarkup);
   }
 
@@ -105,7 +105,7 @@ class Results {
       </div>
     `;
 
-    this._deleteSectionContent();
+    this.constructor._deleteSectionContent(this._section);
     this._section.insertAdjacentHTML('afterbegin', feedbackMarkup);
   }
 
@@ -120,18 +120,18 @@ class Results {
         </div>
         <div class="news__cards-list-container">
           <div class="news__cards-list"></div>
-          <button class="news__show-more-button button">Показать еще</button>
+          <button class="news__show-more-button news__show-more-button_hidden button">Показать еще</button>
         </div>
       </div>
     `;
 
-    this._deleteSectionContent();
+    this.constructor._deleteSectionContent(this._section);
     this._section.insertAdjacentHTML('afterbegin', cardsContainerMarkup);
 
-    this._newsCardsListContainer = this._section.querySelector(`.${this._CSS_CLASSES.newsCardsListContainer}`);
-    this._newsCardsList = this._section.querySelector(`.${this._CSS_CLASSES.newsCardsList}`);
+    this._newsCardsListContainer = this._section.querySelector('.news__cards-list-container');
+    this._newsCardsList = this._section.querySelector('.news__cards-list');
 
-    this._showMoreButton = this._section.querySelector(`.${this._CSS_CLASSES.showMoreButton}`);
+    this._showMoreButton = this._section.querySelector('.news__show-more-button');
     this._showMoreButton.addEventListener('click', () => this.addNewsCardsHandler());
   }
 

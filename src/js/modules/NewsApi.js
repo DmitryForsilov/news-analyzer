@@ -1,18 +1,6 @@
-class NewsApi {
-  constructor(config) {
-    this._config = config;
-  }
+import Api from './Api.js';
 
-  static async makeRequest(url) {
-    const response = await fetch(url);
-
-    if (response.ok) {
-      return response.json();
-    }
-
-    return Promise.reject(Error(`Error: ${response.status} ${response.statusText}`));
-  }
-
+class NewsApi extends Api {
   getNews(query, currentDate, dateSevenDaysBefore) {
     const options = {
       ...this._config.options,
@@ -21,13 +9,10 @@ class NewsApi {
       to: currentDate,
     };
 
-    const preparedOptions = Object.entries(options)
-      .map(([key, value]) => `${key}=${value}`)
-      .join('&');
+    const formattedOptions = super.constructor.formatOptions(options);
+    const url = `${this._config.baseUrl}/${this._config.endpoint}?${formattedOptions}`;
 
-    const url = `${this._config.baseUrl}/${this._config.endpoint}?${preparedOptions}`;
-
-    return this.constructor.makeRequest(url);
+    return super.constructor.makeRequest(url);
   }
 }
 

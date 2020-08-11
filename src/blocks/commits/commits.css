@@ -1,3 +1,4 @@
+@import url('./__content/commits__content.css');
 @import url('./__link-wrapper/commits__link-wrapper.css');
 @import url('./__link/commits__link.css');
 @import url('./__title-container/commits__title-container.css');
@@ -7,8 +8,4 @@
 .commits {
   font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
   background-color: #F5F6F7;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
 }

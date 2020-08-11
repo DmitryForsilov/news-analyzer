@@ -48,8 +48,7 @@ class Statistics {
     `;
 
     const analyticsGlobalContentContainer = document.createElement('div');
-    analyticsGlobalContentContainer
-      .classList
+    analyticsGlobalContentContainer.classList
       .add('analytics-global__content', 'main-container', 'main-container_place_analytics-global');
     analyticsGlobalContentContainer.insertAdjacentHTML('afterbegin', analyticsGlobalContentMarkup);
 
@@ -76,18 +75,18 @@ class Statistics {
       </ul>
     `;
 
-    const daysAndCharts = data.allMentionsInDaysSorted.reduce((acc, [date, mentions]) => {
+    const daysAndCharts = data.allMentionsInDaysSorted.map(([date, mentions]) => {
       const persentage = convertToPercent(mentions, data.allMentions);
 
       if (!persentage) {
-        return acc;
+        return '';
       }
 
       const day = `<p class="table__day">${date}</p>`;
       const chart = `<div class="table__chart" style="width: ${persentage}%">${persentage}</div>`;
 
-      return `${acc}${day}${chart}`;
-    }, '');
+      return `${day}${chart}`;
+    }).join('');
 
     const analyticsDaysContentContainer = document.createElement('div');
     analyticsDaysContentContainer.classList
@@ -123,13 +122,20 @@ class Statistics {
       }
     });
 
-    return result;
+    return {
+      ...result,
+      allMentions: result.mentionsInTitles + result.mentionsInTexts,
+    };
   }
 
   _processStorageData() {
     const newsCount = this._news.length;
-    const { mentionsInTitles, mentionsInTexts, allMentionsInDays } = this._calculateMentions();
-    const allMentions = mentionsInTitles + mentionsInTexts;
+    const {
+      mentionsInTitles,
+      mentionsInTexts,
+      allMentionsInDays,
+      allMentions,
+    } = this._calculateMentions();
     const allMentionsInDaysSorted = Object.entries(allMentionsInDays);
 
     return {
@@ -151,7 +157,7 @@ class Statistics {
     sectionElement.appendChild(contentElement);
   }
 
-  init() {
+  initRender() {
     const { analyticsGlobalData, analyticsDaysData } = this._processStorageData();
     const analyticsGlobalContent = this.constructor
       ._createAnalyticsGlobalContent(this._query, analyticsGlobalData);
