@@ -1,6 +1,6 @@
 import formatUtcDateToDayMonthYear from '../utils/formatUtcDateToDayMonthYear.js';
 import loadBackgroundImageFallback from '../utils/loadBackgroundImageFallback.js';
-import deleteTagsFromString from '../utils/deleteTagsFromString.js';
+import sanitizeHTML from '../utils/sanitizeHTML.js';
 
 class Results {
   constructor(section, newsStorageCallbacks) {
@@ -24,14 +24,21 @@ class Results {
   }
 
   static _createNewsCard(data) {
+    const urlToResource = sanitizeHTML(data.url);
+    const urlToImage = sanitizeHTML(data.urlToImage);
+    const newsCardDate = formatUtcDateToDayMonthYear(sanitizeHTML(data.publishedAt));
+    const newsCardTitle = sanitizeHTML(data.title);
+    const newsCardText = sanitizeHTML(data.description);
+    const newsCardSite = sanitizeHTML(data.source.name);
+
     const newsCardContentMarkup = `
-      <a href="${data.url}" class="news-card__wrapper-link link" target="_blank">
+      <a href="${urlToResource}" class="news-card__wrapper-link link" target="_blank">
         <div class="news-card__img-wrapper"></div>
         <div class="news-card__text-content">
-          <p class="news-card__date">${formatUtcDateToDayMonthYear(data.publishedAt)}</p>
-          <h3 class="news-card__title">${data.title}</h3>
-          <p class="news-card__text">${deleteTagsFromString(data.description)}</p>
-          <p class="news-card__site">${data.source.name}</p>
+          <p class="news-card__date">${newsCardDate}</p>
+          <h3 class="news-card__title">${newsCardTitle}</h3>
+          <p class="news-card__text">${newsCardText}</p>
+          <p class="news-card__site">${newsCardSite}</p>
         </div>
       </a>
     `;
@@ -41,7 +48,7 @@ class Results {
     newsCardElement.insertAdjacentHTML('afterbegin', newsCardContentMarkup);
 
     const newsCardImageWrapper = newsCardElement.querySelector('.news-card__img-wrapper');
-    loadBackgroundImageFallback(newsCardImageWrapper, data.urlToImage);
+    loadBackgroundImageFallback(newsCardImageWrapper, urlToImage);
 
     return newsCardElement;
   }
