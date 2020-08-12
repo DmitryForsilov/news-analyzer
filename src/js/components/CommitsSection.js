@@ -1,4 +1,5 @@
 import formatUtcDateToDayMonthYear from '../utils/formatUtcDateToDayMonthYear';
+import sanitizeHTML from '../utils/sanitizeHTML.js';
 
 class Commits {
   constructor(commitsContainer) {
@@ -10,20 +11,25 @@ class Commits {
   }
 
   static _createCommitMarkup(data) {
+    const urlToCommit = sanitizeHTML(data.html_url);
+    const avatarUrl = sanitizeHTML(data.author.avatar_url);
+    const commitDate = formatUtcDateToDayMonthYear(sanitizeHTML(data.commit.committer.date));
+    const commitName = sanitizeHTML(data.commit.committer.name);
+    const commitEmail = sanitizeHTML(data.commit.committer.email);
+    const commitDescription = sanitizeHTML(data.commit.message);
+
     const commitMarkup = `
       <article class="swiper-slide commit">
-        <a href="${data.html_url}" class="commit__wrapper-link link" target="_blank">
-          <p class="commit__date">
-            ${formatUtcDateToDayMonthYear(data.commit.committer.date)}
-          </p>
+        <a href="${urlToCommit}" class="commit__wrapper-link link" target="_blank">
+          <p class="commit__date">${commitDate}</p>
           <div class="commit__title-container">
-            <img src="${data.author.avatar_url}" alt="Фотография автора" class="commit__avatar">
+            <img src="${avatarUrl}" alt="Фотография автора" class="commit__avatar">
             <div class="commit__title-text-wrapper">
-              <h3 class="commit__name">${data.commit.committer.name}</h3>
-              <p class="commit__email">${data.commit.committer.email}</p>
+              <h3 class="commit__name">${commitName}</h3>
+              <p class="commit__email">${commitEmail}</p>
             </div>
           </div>
-          <p class="commit__description">${data.commit.message}</p>
+          <p class="commit__description">${commitDescription}</p>
         </a>
       </article>
     `;

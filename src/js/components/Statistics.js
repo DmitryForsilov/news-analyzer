@@ -2,6 +2,7 @@ import upperFirst from '../utils/upperFirst.js';
 import formatNumber from '../utils/formatNumber.js';
 import formatUtcDateToDayWeekday from '../utils/formatUtcDateToDayWeekday.js';
 import convertToPercent from '../utils/convertToPercent.js';
+import sanitizeHTML from '../utils/sanitizeHTML.js';
 
 class Statistics {
   constructor(storageData, sectionElements) {
@@ -11,7 +12,18 @@ class Statistics {
     this._analyticsDays = sectionElements.analyticsDays;
   }
 
+  static _renderSectionContent(sectionElement, contentElement) {
+    sectionElement.innerHTML = '';
+    sectionElement.appendChild(contentElement);
+  }
+
   static _createAnalyticsGlobalContent(query, data) {
+    const keyWord = upperFirst(sanitizeHTML(query));
+    const newsCount = formatNumber(sanitizeHTML(data.newsCount));
+    const mentionsInTitles = formatNumber(sanitizeHTML(data.mentionsInTitles));
+    const mentionsInTexts = formatNumber(sanitizeHTML(data.mentionsInTexts));
+    const allMentions = formatNumber(sanitizeHTML(data.allMentions));
+
     const analyticsGlobalContentMarkup = `
       <ul class="analytics-global__breadcrumbs">
         <li class="analytics-global__breadcrumbs-item">
@@ -24,25 +36,25 @@ class Statistics {
       </ul>
       
       <h1 class="analytics-global__title title">
-        Вы спросили: &laquo;${upperFirst(query)}&raquo;
+        Вы спросили: &laquo;${keyWord}&raquo;
       </h1>
 
       <ul class="analytics-global__list">
         <li class="analytics-global__text">
           Новостей за неделю:
-          <span class="analytics-global__count">${formatNumber(data.newsCount)}</span>
+          <span class="analytics-global__count">${newsCount}</span>
         </li>
         <li class="analytics-global__text">
           Упоминаний в заголовках:
-          <span class="analytics-global__count">${formatNumber(data.mentionsInTitles)}</span>
+          <span class="analytics-global__count">${mentionsInTitles}</span>
         </li>
         <li class="analytics-global__text">
           Упоминаний в текстах:
-          <span class="analytics-global__count">${formatNumber(data.mentionsInTexts)}</span>
+          <span class="analytics-global__count">${mentionsInTexts}</span>
         </li>
         <li class="analytics-global__text">
           Общее количество упоминаний:
-          <span class="analytics-global__count">${formatNumber(data.allMentions)}</span>
+          <span class="analytics-global__count">${allMentions}</span>
         </li>
       </ul>
     `;
@@ -82,7 +94,7 @@ class Statistics {
         return '';
       }
 
-      const day = `<p class="table__day">${date}</p>`;
+      const day = `<p class="table__day">${sanitizeHTML(date)}</p>`;
       const chart = `<div class="table__chart" style="width: ${persentage}%">${persentage}</div>`;
 
       return `${day}${chart}`;
@@ -150,11 +162,6 @@ class Statistics {
         allMentions,
       },
     };
-  }
-
-  static _renderSectionContent(sectionElement, contentElement) {
-    sectionElement.innerHTML = '';
-    sectionElement.appendChild(contentElement);
   }
 
   initRender() {
