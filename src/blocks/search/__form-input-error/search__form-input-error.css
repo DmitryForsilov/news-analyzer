@@ -1,0 +1,14 @@
+.search__form-input-error {
+  height: 1em;
+  padding-left: 24px;
+  margin: 6px 0 0 0;
+  font-size: 16px;
+  color: #fff8f8;
+}
+
+@media (max-width: 576px) {
+  .search__form-input-error {
+    font-size: 14px;
+    margin: 0 0 4px;
+  }
+}

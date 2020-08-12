@@ -1,0 +1,12 @@
+@import url('./__cards-list-container/news__cards-list-container.css');
+@import url('./__cards-list/news__cards-list.css');
+@import url('./__link-wrapper/news__link-wrapper.css');
+@import url('./__link/news__link.css');
+@import url('./__show-more-button/news__show-more-button.css');
+@import url('./__title-container/news__title-container.css');
+@import url('./__title/news__title.css');
+
+.news {
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+  width: 100%;
+}

@@ -1,9 +1,10 @@
 @import url('./__content/search__content.css');
 @import url('./__title/search__title.css');
 @import url('./__subtitle/search__subtitle.css');
-@import url('./__button/search__form-button.css');
+@import url('./__form-button/search__form-button.css');
 @import url('./__form/search__form.css');
-@import url('./__input/search__form-input.css');
+@import url('./__form-input/search__form-input.css');
+@import url('./__form-input-error/search__form-input-error.css');
 
 .search {
   font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;

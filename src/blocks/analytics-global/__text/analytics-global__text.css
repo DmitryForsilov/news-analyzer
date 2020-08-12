@@ -1,6 +1,12 @@
 .analytics-global__text {
   font-size: 18px;
   line-height: 24px;
-  margin: 0 5px 0 0;
+  margin: 0;
   color: #1A1B22;
+}
+
+@media (max-width: 576px) {
+  .analytics-global__text {
+    font-size: 16px;
+  }
 }

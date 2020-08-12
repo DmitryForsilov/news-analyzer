@@ -1,33 +1,46 @@
 import 'swiper/swiper-bundle.css';
 import './about.css';
 import Swiper, { Navigation, Pagination } from 'swiper';
+import MESSAGES from '../../js/constants/MESSAGES.js';
+import CSS_SELECTORS from '../../js/constants/CSS_SELECTORS.js';
+import SWIPER_CONFIG from '../../js/constants/SWIPER_CONFIG.js';
+import GithubApi from '../../js/modules/GitubApi.js';
+import GITHUB_API_CONFIG from '../../js/constants/GITHUB_API_CONFIG.js';
+import CommitsSection from '../../js/components/CommitsSection.js';
 
-Swiper.use([Navigation, Pagination]);
+/* --- Элементы --- */
+const commitsContainer = document.querySelector(CSS_SELECTORS.commitsContainer);
 
-const mySwiper = new Swiper('.swiper-container', {
-  slidesPerView: 'auto',
-  roundLengths: true,
-  spaceBetween: 8,
-  loop: false,
-  centeredSlides: false,
+/* --- Функции --- */
+const initSwiper = () => {
+  Swiper.use([Navigation, Pagination]);
 
-  pagination: {
-    el: '.swiper-pagination',
-  },
+  const mySwiper = new Swiper(CSS_SELECTORS.sliderContainer, SWIPER_CONFIG);
 
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+  mySwiper.init();
+};
 
-  breakpoints: {
-    768: {
-      spaceBetween: 12,
-    },
-    1024: {
-      spaceBetween: 16,
-      loop: true,
-      centeredSlides: true,
-    },
-  },
-});
+const renderCommitsSection = (commitsSection, githubApi) => {
+  githubApi.getCommits()
+    .then((commits) => {
+      if (commits.length === 0) {
+        commitsSection.renderFeedback(MESSAGES.nothingFound);
+      } else {
+        const urlToCommits = githubApi.getUrlToCommits();
+
+        commitsSection.renderCommitsContent(commits, urlToCommits);
+        initSwiper();
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      commitsSection.renderFeedback(MESSAGES.commitsError);
+    });
+};
+
+/* --- Экземпляры классов --- */
+const commitsSection = new CommitsSection(commitsContainer);
+const githubApi = new GithubApi(GITHUB_API_CONFIG);
+
+/* --- Инициализация --- */
+renderCommitsSection(commitsSection, githubApi);

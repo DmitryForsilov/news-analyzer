@@ -1,0 +1,46 @@
+@import url('./__img-wrapper/news-card__img-wrapper.css');
+@import url('./__text-content/news-card__text-content.css');
+@import url('./__date/news-card__date.css');
+@import url('./__title/news-card__title.css');
+@import url('./__text/news-card__text.css');
+@import url('./__site/news-card__site.css');
+
+.news-card {
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+  height: 576px;
+  border-radius: 16px;
+  overflow: hidden;
+  color: #1A1B22;
+  cursor: url('../../images/icon-cursor.svg'), auto;
+  transition: .3s ease;
+}
+
+.news-card:hover {
+  box-shadow:
+    0 4px 6px -7px rgba(0, 0, 0, .3),
+    0 4px 30px -9px rgba(0, 0, 0, .3);
+}
+
+@media (max-width: 1280px) {
+  .news-card {
+    height: 520px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .news-card {
+    height: 468px;
+  }
+}
+
+@media (max-width: 768px) {
+  .news-card {
+    height: 420px;
+  }
+}
+
+@media (max-width: 576px) {
+  .news-card {
+    height: 446px;
+  }
+}
