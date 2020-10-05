@@ -7,7 +7,7 @@ This is news app. It shows and analyzes the most popular news on a specific topi
 
 This app uses local storage, newsapi and github api.
 
-The project was reviewed by Yandex Praktikum.
+This project was reviewed by Yandex Praktikum.
 
 [Link to deployed project](https://dmitryforsilov.github.io/news-analyzer)
 
@@ -20,7 +20,7 @@ The project was reviewed by Yandex Praktikum.
 - Rendering more news by clicking on "Show more" button
 - Using default image if link is undefined or image can't download
 - XSS defence. Using sanitizeHTML function for user input and data that using in markup.
-- Showing link to "analytics page" if news came from api
+- Showing link to "analytics page" if there are news in local storage
 - Calculating all analytics when "See analytics" button was clicked
 - Rendering slider with 20 last commits of this project from github. Opening current commit by clicking on slide
 
