@@ -1,10 +1,44 @@
-# NewsAnalyzer
+[![Maintainability](https://api.codeclimate.com/v1/badges/40d01c78ecd02a3a7109/maintainability)](https://codeclimate.com/github/DmitryForsilov/news-analyzer/maintainability)
+![CI](https://github.com/DmitryForsilov/news-analyzer/workflows/CI/badge.svg)
+
+# News Analyzer
+
+This is news app. It shows and analyzes the most popular news on a specific topic.
+
+The project was reviewed by Yandex Praktikum.
 
 [Ссылка на деплой](https://dmitryforsilov.github.io/news-analyzer)
 
-NewsAnalyzer - это сервис для анализа происходящих в мире событий. Его задача — установить, насколько популярны новости на определённую тему.
+## Features:
+- Form input validation
+- Rendering initial data from server
+- Editing user info
+- Adding avatar photo
+- Adding picture
+- Deleting picture
+- Opening picture-popup by click
+- Toggling like on picture
 
-Проект проходил ревью у специалистов Яндекс Практикума.
+## Used in project:
+- **HTML**
+- **CSS**
+- **Javascript**
+- **OOP**
+- **BEM**
+- **bem-tools-create**
+- **swiperjs**
+- **webpack**
+- **es lint**
+- **gh pages** - deploy
+
+## Webpack setup:
+- Multiple pages
+- Three build scripts: start, build and deploy
+- Babel transpilation
+- Hot reload
+- JS and CSS hashing
+- CSS minification
+- Autoprefixer
 
 ### Функциональность:
 1) #### Общее:
@@ -39,25 +73,3 @@ NewsAnalyzer - это сервис для анализа происходящи�
 - Если коммитов по запросу не найдено, рендерится блок с сообщением об этом
 - Если запрос завершился успешно и коммиты найдены, рендерится слайдер. В качестве слайдов - коммиты. При клике по слайду происходит переход на этот коммит на гитхабе. Для реализации слайдера использована библиотека swiperjs
 
-
-
-### В проекте использовано:
-- **HTML**
-- **CSS**
-- **JavaScript**
-- **BEM**
-- **OOP**
-- **es lint** - код стайл
-- **swiperjs** - слайдер
-- **gh-pages** - деплой 
-- **webpack** - сборка
-
-### Настройка Webpack:
-- Мультистраничность
-- Три типа сборки: dev, build и deploy
-- JS код транспилируется через Babel
-- Hot reload при сохранении файлов проекта
-- Хеширование JS и CSS файлов
-- Минификация CSS кода
-- Оптимизация изображений
-- Автопрефиксер
