@@ -5,19 +5,24 @@
 
 This is news app. It shows and analyzes the most popular news on a specific topic.
 
+This app uses local storage, newsapi and github api.
+
 The project was reviewed by Yandex Praktikum.
 
-[Ссылка на деплой](https://dmitryforsilov.github.io/news-analyzer)
+[Link to deployed project](https://dmitryforsilov.github.io/news-analyzer)
 
 ## Features:
-- Form input validation
-- Rendering initial data from server
-- Editing user info
-- Adding avatar photo
-- Adding picture
-- Deleting picture
-- Opening picture-popup by click
-- Toggling like on picture
+- Form submit validation
+- Saving data in local storage
+- Searching news
+- Rendering preloaders and errors
+- Rendering news. Opening news in new tab by clicking on newscard
+- Rendering more news by clicking on "Show more" button
+- Using default image if link is undefined or image can't download
+- XSS defence. Using sanitizeHTML function for user input and data that using in markup.
+- Showing link to "analytics page" if news came from api
+- Calculating all analytics when "See analytics" button was clicked
+- Rendering slider with 20 last commits of this project from github. Opening current commit by clicking on slide
 
 ## Used in project:
 - **HTML**
@@ -25,6 +30,9 @@ The project was reviewed by Yandex Praktikum.
 - **Javascript**
 - **OOP**
 - **BEM**
+- **localStorage**
+- **newsapi**
+- **github api**
 - **bem-tools-create**
 - **swiperjs**
 - **webpack**
@@ -39,37 +47,3 @@ The project was reviewed by Yandex Praktikum.
 - JS and CSS hashing
 - CSS minification
 - Autoprefixer
-
-### Функциональность:
-1) #### Общее:
-- Использована методолгия БЭМ для файловой структуры и именования css-классов
-- ООП для JS-кода
-- Верстка адаптирована
-- В проекте три страницы: "главная", "аналитика" и "о проекте"
-- Данные, полученные на главной странице (ключевое слово и массив новостей), сохраняются в localStorage. Данные остаются в localStorage при закрытии браузера и переходе по страницам
-- localStorage очищается при новом запросе к newsapi.org
-- Максимальное количество новостей - 100шт (ограничение бесплатного использования newsapi.org)
-- Защита от XSS атак. Данные от сервера, которые вставляются в разметку, проходят обработку sanitizeHTML. Ключевое слово также проходит обработку sanitizeHTML перед вставкой
-- Многоточие для многострочного текста, если он не помещается в контейнере
-- Fallback функция для изображений, приходящих от newsapi.org. Если ссылки на изображение нет, или оно не загружается, то используется заглушка
-2) #### "Главная":
-- Валидация инпута по сабмиту
-- Отправка запроса с ключевым словом на https://newsapi.org
-- Пока запрос обрабатывается, форма заблокирована и рендерится прелоудер
-- Если запрос завершился ошибкой, рендерится блок с сообщением об ошибке. Ошибка выводится в консоль
-- Если новостей по запросу не найдено, рендерится блок с сообщением об этом
-- Если запрос завершился успешно и новости найдены, текст запроса и массив новостей сохраняются в localStorage. Рендерятся три карточки (максимум)
-- При клике по карточки присходит переход на источник этой новости
-- Кнопка "Показать еще" показывается, если в localStorage есть еще новости для рендеринга. При клике на нее рендерятся три (максимум) карточки
-- Если во время текущей сессии рендерились карточки, то при новой загрузке страницы рендерятся три (максимум) карточки 
-3) #### "Аналитика":
-- Ссылка на страницу рендерится на главной, если новости пришли от сервера
-- При загрузке страницы происходят вычисления на основе данных, сохранненых в localStorage. Рендерятся секции с результатами вычислений
-- В графике рендерится процент от общего количества упоминаний по дням. Максимально отображается семь дней. Дни не отображаются, если: а) За этот день не было упоминаний; б) Из-за ограничения в 100 новостей. За один день новостей может быть 100шт, и тогда в графике будет отображаться только этот день
-- "Общее количество упоминаний" может быть меньше "Новостей за неделю" по причине того, что newsapi.org отдает новость с неполным текстом. Подсчитать точное количество упоминаний ключего слова в текстах новостей не представляется возможным
-4) #### "О проекте":
-- При загрузке страницы производится запрос к https://api.github.com за последними 20 коммитами этого проекта
-- Если запрос завершился ошибкой, рендерится блок с сообщением об ошибке. Ошибка выводится в консоль
-- Если коммитов по запросу не найдено, рендерится блок с сообщением об этом
-- Если запрос завершился успешно и коммиты найдены, рендерится слайдер. В качестве слайдов - коммиты. При клике по слайду происходит переход на этот коммит на гитхабе. Для реализации слайдера использована библиотека swiperjs
-
