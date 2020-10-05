@@ -8,10 +8,10 @@ import GithubApi from '../../js/modules/GitubApi.js';
 import GITHUB_API_CONFIG from '../../js/constants/GITHUB_API_CONFIG.js';
 import CommitsSection from '../../js/components/CommitsSection.js';
 
-/* --- Элементы --- */
+/* --- dom elements --- */
 const commitsContainer = document.querySelector(CSS_SELECTORS.commitsContainer);
 
-/* --- Функции --- */
+/* --- Functions --- */
 const initSwiper = () => {
   Swiper.use([Navigation, Pagination]);
 
@@ -38,9 +38,9 @@ const renderCommitsSection = (commitsSection, githubApi) => {
     });
 };
 
-/* --- Экземпляры классов --- */
+/* --- instances --- */
 const commitsSection = new CommitsSection(commitsContainer);
 const githubApi = new GithubApi(GITHUB_API_CONFIG);
 
-/* --- Инициализация --- */
+/* --- init --- */
 renderCommitsSection(commitsSection, githubApi);

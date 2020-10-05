@@ -10,8 +10,8 @@ export default (imageWrapper, urlToImage) => {
     };
   }
 
-  // Если изображение успешно загрузилось, вставляем его фоном.
-  // Иначе ничего не делаем. Фоном вставляется заглушка, прописанная в стиле.
+  // If image downloaded successfully => insert it via background-image
+  // Else => do nothing. Using default image in css
   setTimeout(() => {
     if (loaded) {
       imageWrapper.style['background-image'] = `url(${urlToImage})`;

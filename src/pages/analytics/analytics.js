@@ -3,14 +3,14 @@ import CSS_SELECTORS from '../../js/constants/CSS_SELECTORS.js';
 import DataStorage from '../../js/modules/DataStorage.js';
 import Statistics from '../../js/components/Statistics.js';
 
-/* --- Элементы --- */
+/* --- dom elements --- */
 const { localStorage } = window;
 const sectionElements = {
   analyticsGlobal: document.querySelector(CSS_SELECTORS.analyticsGlobal),
   analyticsDays: document.querySelector(CSS_SELECTORS.analyticsDays),
 };
 
-/* --- Функции --- */
+/* --- Functions --- */
 const getStorageData = (dataStorage) => {
   const storageData = {
     query: dataStorage.getItem('query'),
@@ -20,9 +20,9 @@ const getStorageData = (dataStorage) => {
   return storageData;
 };
 
-/* --- Экземпляры классов --- */
+/* --- instances --- */
 const dataStorage = new DataStorage(localStorage);
 const statistics = new Statistics(getStorageData(dataStorage), sectionElements);
 
-/* --- Инициализация --- */
+/* --- init --- */
 statistics.initRender();

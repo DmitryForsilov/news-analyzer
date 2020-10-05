@@ -10,7 +10,7 @@ import NewsApi from '../../js/modules/NewsApi.js';
 import SearchForm from '../../js/components/SearchForm.js';
 import Results from '../../js/components/Results.js';
 
-/* --- Элементы --- */
+/* --- dom elements --- */
 const { localStorage } = window;
 const { form } = document.forms;
 const { input } = form.elements;
@@ -18,7 +18,7 @@ const { submitButton } = form.elements;
 const inputError = form.querySelector(CSS_SELECTORS.inputError);
 const resultsContainer = document.querySelector(CSS_SELECTORS.resultsContainer);
 
-/* --- Функции --- */
+/* --- Functions --- */
 const initInputQuery = (inputElement, query) => {
   if (query) {
     inputElement.defaultValue = query;
@@ -60,7 +60,7 @@ const makeSubmitFormCallback = (newsApi, dataStorage, results) => (query, callba
     .finally(() => callbacks.enableFormElements());
 };
 
-/* --- Экземпляры классов --- */
+/* --- instances --- */
 const newsApi = new NewsApi(NEWS_API_CONFIG);
 const dataStorage = new DataStorage(localStorage);
 const results = new Results(resultsContainer, makeNewsStorageCallbacks(dataStorage));
@@ -72,9 +72,9 @@ const searchForm = new SearchForm(
   MESSAGES,
 );
 
-/* --- Установка слушателей --- */
+/* --- listeners --- */
 searchForm.setEvenListeners();
 
-/* --- Инициализация --- */
+/* --- init --- */
 initInputQuery(input, dataStorage.getItem('query'));
 results.initRenderNews();
