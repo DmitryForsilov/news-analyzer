@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DmitryForsilov/NewsAnalyzer.git"
+    "url": "git+https://github.com/DmitryForsilov/news-analyzer.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DmitryForsilov/NewsAnalyzer/issues"
+    "url": "https://github.com/DmitryForsilov/news-analyzer/issues"
   },
-  "homepage": "https://github.com/DmitryForsilov/NewsAnalyzer#readme",
+  "homepage": "https://github.com/DmitryForsilov/news-analyzer#readme",
   "devDependencies": {
     "@babel/cli": "7.10.5",
     "@babel/core": "7.10.5",

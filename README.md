@@ -1,6 +1,6 @@
 # NewsAnalyzer
 
-[Ссылка на деплой](https://dmitryforsilov.github.io/NewsAnalyzer)
+[Ссылка на деплой](https://dmitryforsilov.github.io/news-analyzer)
 
 NewsAnalyzer - это сервис для анализа происходящих в мире событий. Его задача — установить, насколько популярны новости на определённую тему.
 
